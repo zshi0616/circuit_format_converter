@@ -1,0 +1,27 @@
+module b02_C( LINEA, STATO_REG_2__SCAN_IN, STATO_REG_1__SCAN_IN, STATO_REG_0__SCAN_IN, U31, U32, U33, U38); 
+input LINEA, STATO_REG_2__SCAN_IN, STATO_REG_1__SCAN_IN, STATO_REG_0__SCAN_IN; 
+output U31, U32, U33, U38; 
+wire U34, U35, U36, U37, U39, U40, U41, U42, U43, U44, U45, U46, U47, U48, U49, U50, U51, U52; 
+assign U34 = ~STATO_REG_2__SCAN_IN; 
+assign U35 = ~STATO_REG_0__SCAN_IN; 
+assign U36 = ~LINEA; 
+assign U37 = ~STATO_REG_1__SCAN_IN; 
+assign U40 = LINEA | STATO_REG_2__SCAN_IN; 
+assign U43 = LINEA | STATO_REG_1__SCAN_IN; 
+assign U47 = LINEA | STATO_REG_2__SCAN_IN | STATO_REG_0__SCAN_IN; 
+assign U31 = U35 & U37 & STATO_REG_2__SCAN_IN; 
+assign U41 = ~(U40 & STATO_REG_0__SCAN_IN); 
+assign U44 = ~(U34 & U43); 
+assign U45 = ~(LINEA & U34); 
+assign U49 = ~(LINEA & U34); 
+assign U50 = ~(U36 & STATO_REG_2__SCAN_IN); 
+assign U52 = ~(U34 & U35 & STATO_REG_1__SCAN_IN); 
+assign U39 = ~(U50 & U49 & U35); 
+assign U46 = ~(U45 & STATO_REG_0__SCAN_IN); 
+assign U51 = ~(U44 & STATO_REG_0__SCAN_IN); 
+assign U38 = ~(U52 & U51); 
+assign U42 = ~(U39 & STATO_REG_1__SCAN_IN); 
+assign U48 = ~(U46 & U37); 
+assign U32 = ~(U48 & U47); 
+assign U33 = ~(U42 & U41); 
+endmodule 
